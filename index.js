@@ -45,8 +45,9 @@ function displayBooks() {
         <h3>${book.title}</h3>
         <p>${book.author}</p>
         <p>${book.pages}</p>
-        <p>Have Read: ${book.read}</p>
-        <button id="removeBook" class="removeBtn>Remove Book</button>
+        <p class="read-para">Have Read: ${book.read}</p>
+        <button id="removeBook" class="remove-book-btn" onClick="removeBook(this)">Remove Book</button>
+        <button id="toggleReadStatus" class="toggleBtn" onClick="toggleRead(this)">Toggle Read Status</button>
         </div>`;
     })
 }
@@ -61,6 +62,19 @@ function removeBook(elem) {
     const parentId = elem.parentNode.id;
     const parent = document.getElementById(parentId);
     parent.remove();
+}
+
+function toggleRead(elem){
+    const parentId = elem.parentNode.id;
+    const book = myLibrary[parentId - 1];
+
+    if (book.read == 'yes') {
+        book.read = 'no';
+    } else {
+        book.read = 'yes'
+    }
+    const parent = document.getElementById(parentId);
+    parent.childNodes[7].textContent = `Have Read: ${book.read}`;
 }
 
 function clearBooks() {
