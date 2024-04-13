@@ -10,6 +10,7 @@ const myLibrary = [];
 
 newBookBtn.addEventListener('click', () => {
     bookDialog.show();
+    bookDialog.classList.toggle('hidden');
 })
 
 addBookBtn.addEventListener('click', (e) => {
@@ -23,6 +24,7 @@ addBookBtn.addEventListener('click', (e) => {
     const book = new Book(id, title, author, pages, read);
     addBookToLibrary(book);
     bookDialog.close();
+    bookDialog.classList.toggle('hidden');
     clearBooks();
     displayBooks();
 })
@@ -41,10 +43,10 @@ function Book(id, title, author, pages, read) {
 
 function displayBooks() {
     myLibrary.forEach((book) => {
-        booksDiv.innerHTML += `<div class="books" id="${book.id}">
+        booksDiv.innerHTML += `<div class="book" id="${book.id}">
         <h3>${book.title}</h3>
-        <p>${book.author}</p>
-        <p>${book.pages}</p>
+        <p>Author: ${book.author}</p>
+        <p>Page Count: ${book.pages}</p>
         <p class="read-para">Have Read: ${book.read}</p>
         <button id="removeBook" class="remove-book-btn" onClick="removeBook(this)">Remove Book</button>
         <button id="toggleReadStatus" class="toggleBtn" onClick="toggleRead(this)">Toggle Read Status</button>

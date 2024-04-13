@@ -6,13 +6,14 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.typekit.net/vqe6jyk.css">
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
         <main class="container">
             <h1>The Library Web App</h1>
-            <button id="newBook">New Book</button>
-            <dialog id="bookDialog">
+            <button id="newBook" class="new-book-btn">New Book</button>
+            <dialog id="bookDialog" class="hidden">
                 <h2>Enter Book Info</h2>
                 <form action="post" method="dialog">
                     <input type="text" id="titleInput" name="title" placeholder="Enter a title">
@@ -27,7 +28,7 @@
                         <input type="radio" id="hasRead" name="read" value="yes">
                         
                     </fieldset>
-                    <button type="submit" id="addBookBtn">Add Book</button>
+                    <button type="submit" id="addBookBtn" class="add-book-btn">Add Book</button>
                 </form>
             </dialog>
             <div class="books" id="books">
