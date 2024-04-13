@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+    </head>
+    <body>
+        <main class="container">
+            <h1>The Library Web App</h1>
+            <button id="newBook">New Book</button>
+            <dialog id="bookDialog">
+                <h2>Enter Book Info</h2>
+                <form action="post" method="dialog">
+                    <input type="text" id="titleInput" name="title" placeholder="Enter a title">
+                    <input type="text" id="authorInput" name="author" placeholder="Enter an author">
+                    <input type="number" id="pagesInput" name="pages" placeholder="Enter page count">
+                    <fieldset>
+                        <legend>Have you read the book?</legend>
+
+                        <label for="notRead">No</label>
+                        <input type="radio" id="notRead" name="read" value="no" checked>
+                        <label for="read">Yes</label>
+                        <input type="radio" id="hasRead" name="read" value="yes">
+                        
+                    </fieldset>
+                    <button type="submit" id="addBookBtn">Add Book</button>
+                </form>
+            </dialog>
+            <div class="books" id="books">
+                
+            </div>
+        </main>
+        <script src="./index.js"></script>
+    </body>
+</html>
