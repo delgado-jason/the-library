@@ -1,0 +1,16 @@
+--root {
+    font-size: 16px;
+}
+
+html {
+    font-size: 0.625rem;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+
+section {
+    padding: 8rem 12rem;
+}
